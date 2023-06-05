@@ -1,21 +1,19 @@
-import { HeaderBangerProps } from '../types'
-import styles from './Header.module.css'
 import { Component } from 'react'
 
-class Header extends Component<HeaderBangerProps> {
+class Header extends Component {
   render() {
-    const {title, buttons} = this.props
+    const buttonList: string[] = ['about us', 'info', 'support us']
+    const headTitle: string = 'Fullmetal Alchemist~'
+
     return(
-      <>
-      <div className={styles.header}>
-        <h1>{title}</h1>
+      <header>
+        <h1>{headTitle}</h1>
         <nav className="buttons">
-          { buttons.map((item: string) => (
+          { buttonList.map((item: string) => (
             <li key={item}>{item}</li>
-            ))}
+          ))}
         </nav>
-      </div>
-    </>
+      </header>
     )
   }
 }

@@ -1,18 +1,29 @@
-import './App.css'
 import  Header  from './components/header/Header'
-import { daHeaderItems } from './components/data'
-import { realMofoGs } from './components/data'
-import { charactersClonesAndGoons } from './components/data'
-import { TopChar } from './components/topChar/TopChar'
+import { TopCharacters } from './components/topCharacters/TopChararacters'
 import { CharList } from './components/charList/CharList'
+import { data }  from './components/data'
 
 
-function App(): JSX.Element {
+export type Character = {
+  name: string;
+  skillset: string[];
+  votes: number;
+  imageUrl: string;
+  background: string;
+  nickName: null | string;
+}
+export type CharacterArray = Character[]
+
+export type MyCompProps = {
+  data: CharacterArray
+}
+
+function App(): React.ReactNode  {
   return (
     <>
-    <Header {...daHeaderItems} />
-    <TopChar {...realMofoGs} />
-    <CharList {...charactersClonesAndGoons} />
+      <Header />
+      <TopCharacters data={data} />
+      <CharList data={data}/>
     </>
   )
 }
