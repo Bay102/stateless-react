@@ -20,5 +20,17 @@ export type ClonesAndGoonsProps = {
   }[]
 }
   
+export type Character = {
+  name: string;
+  skillset: string[];
+  votes: number;
+  imageUrl: string;
+  background: string;
+  nickName: null | string;
+};
 
+export type CharacterArray = Character[];
 
+export type MyCompProps = {
+  data: CharacterArray;
+};

@@ -1,20 +1,19 @@
-import { Component } from 'react'
+import { Component } from 'react';
 
 class Header extends Component {
   render() {
-    const buttonList: string[] = ['about us', 'info', 'support us']
-    const headTitle: string = 'Fullmetal Alchemist~'
+    const buttonList = ['about us', 'info', 'support us'];
 
-    return(
+    return (
       <header>
-        <h1>{headTitle}</h1>
+        <h1>Fullmetal Alchemist~</h1>
         <nav className="buttons">
-          { buttonList.map((item: string) => (
+          {buttonList.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </nav>
       </header>
-    )
+    );
   }
 }
-export default Header
+export default Header;
